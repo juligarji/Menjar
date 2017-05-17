@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <% include  ./partials/head.ejs %>
+</head>
+<body>
+
+<!-- HEADER -->
+<header>
+    <% include  ./partials/header.ejs %>
+</header>
+
+<!-- PRINCIPAL -->
+<main>
+    <div class="row">
+
+        <!-- Mapa boton -->
+        <div class="col s3 offset-s1 mini_map z-depth-2">
+            <div class="mini_middle">
+                <a href="#modal_map" class="modal_map_trigger btn waves-effect waves-light red center_all" id="#modal_map_btn">
+                    Ver mapa
+                </a>
+            </div>
+        </div>
+
+        <!-- Modal Mapa -->
+        <div id="modal_map" class="modal">
+          <div class="modal-content">
+            <h5>Mapa de la ciudad</h5>
+            <!-- Mapa -->
+            <div id="google_map"></div>
+
+          </div>
+          <div class="modal-footer">
+            <a href="#!" class="modal-action modal-close waves-effect waves-green btn-flat">Cerrar</a>
+          </div>
+        </div>
+
+        <!-- Info window -->
+        <div class="col s7">
+            <div class="info_rectangle z-depth-2" id="start_info_box">
+                <span class="close_icon" id="start_info">  </span>
+                <div class="content">
+                    <h5>Encuentra productos cercanos a tu ubicación</h5>
+                    <ul class="features">
+                        <li> Característica 1 <i class="tiny material-icons">done</i></li>
+                        <li> Característica 2 <i class="tiny material-icons">done</i></li>
+                        <li> Característica 3 <i class="tiny material-icons">done</i></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+        <!-- Tab system -->
+    <div class="row">
+        <div class="col s3 offset-s1 info_rectangle z-depth-2" style="margin-top: 20px;">
+
+                <div class="indicator orange">
+                    <ul class="tabs">
+                        <li class="tab s1"><a class="active red-text text-darken-2" href="#content_1">Contenido 1</a></li>
+                        <li class="tab s1"><a class="active red-text text-darken-2" href="#content_2">Contenido 2</a></li>
+                    </ul>
+                </div>
+
+
+            <div id="content_1">
+                <p>
+                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Esse aperiam, perspiciatis officiis! Officia saepe sequi expedita, obcaecati error, voluptas omnis nisi eveniet eaque aut laboriosam id molestiae fugit, officiis! Dolore.
+                </p>
+            </div>
+            <div id="content_2">
+                <p>
+                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Praesentium ab dolorem eaque velit perferendis enim doloribus, earum, esse, error, voluptate similique quam deleniti quasi reiciendis voluptatem distinctio nemo quas mollitia?
+                </p>
+            </div>
+        </div>
+
+        <div class="col s7" style="margin-top: 20px;">
+
+            <div class="product z-depth-2">
+                <!-- Imagen -->
+                <div class="pimage">
+                    <img src="resources/index/products/bonyurtPack.png" alt="">
+                </div>
+                <!-- Datos del producto -->
+                <div class="pdata">
+                    <h5 class="red-text text-darken-3">Bonyurt</h5>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Totam consequatur ea ratione ut provident quibusdam magni molestiae facere sint.</p>
+                </div>
+                <!-- Comprar -->
+                <div class="pbuy">
+                    <div class="pbuy_middle">
+                        <h5 class="center-align">$2.500</h5>
+                        <div class="btn waves-effect waves-light blue-grey" style="margin-right:auto; margin-left:auto">
+                            Comprar
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+            <div class="product z-depth-2">
+                <!-- Imagen -->
+                <div class="pimage">
+                    <img src="resources/index/products/bonyurtPack.png" alt="">
+                </div>
+                <!-- Datos del producto -->
+                <div class="pdata">
+                    <h5 class="red-text text-darken-3">Bonyurt</h5>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Totam consequatur ea ratione ut provident quibusdam magni molestiae facere sint.</p>
+                </div>
+                <!-- Comprar -->
+                <div class="pbuy">
+                    <div class="pbuy_middle">
+                        <h5 class="center-align">$2.500</h5>
+                        <div class="btn waves-effect waves-light blue-grey" style="margin-right:auto; margin-left:auto">
+                            Comprar
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+            <div class="product z-depth-2">
+                <!-- Imagen -->
+                <div class="pimage">
+                    <img src="resources/index/products/bonyurtPack.png" alt="">
+                </div>
+                <!-- Datos del producto -->
+                <div class="pdata">
+                    <h5 class="red-text text-darken-3">Bonyurt</h5>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Totam consequatur ea ratione ut provident quibusdam magni molestiae facere sint.</p>
+                </div>
+                <!-- Comprar -->
+                <div class="pbuy">
+                    <div class="pbuy_middle">
+                        <h5 class="center-align">$2.500</h5>
+                        <div class="btn waves-effect waves-light blue-grey" style="margin-right:auto; margin-left:auto">
+                            Comprar
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+
+</main>
+
+<!-- FOOTER -->
+<footer>
+
+  <%include ./partials/footer.ejs %>
+</footer>
+
+<!-- jQuery -->
+<script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+<!-- JS - Materialize -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.98.2/js/materialize.min.js"></script>
+<!-- Buttons -->
+<script src="js/index/buttons.js"></script>
+<!-- Modals -->
+<script src="js/index/modals.js"></script>
+<!-- Google Maps Api -->
+<script src="js/index/google_maps.js"></script>
+<script async defer
+src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB_lU3W4LsOD0j1VaKsW4wpV4RBae4vdEY&callback=initMap">
+</script>
+
+</body>
+</html>

@@ -1,0 +1,129 @@
+.logo {
+    display: block;
+    margin: auto;
+}
+
+body {
+  display: flex;
+  min-height: 100vh;
+  flex-direction: column;
+}
+
+main {
+  flex: 1 0 auto;
+}
+
+input {
+    background-color: #fff !important;
+    border-radius: 5px !important;
+}
+
+.mapa_prev {
+    width:100%;
+    height: 100%;
+}
+
+ul.features li {
+    display: inline;
+    margin-right: 5%;
+}
+
+.mini_map {
+    /*width: 300px;*/
+    height: 150px;
+    background-image: url("../img/xmaps_prev.png");
+    background-size: cover;
+    border: solid 10px #fff;
+    display: table;
+    /*position: absolute;*/
+}
+
+.info_rectangle {
+    background-color: #fff;
+    margin-left: 20px;
+    padding: 20px;
+}
+
+.rect_marg {
+    background-color: #fff;
+    margin-left: 20px;
+    padding: 30px !important;
+    margin:20px;
+}
+
+.mini_middle {
+    display: table-cell;
+    vertical-align: middle;
+}
+
+.mini_inner {
+    margin-left: auto;
+    margin-right: auto;
+
+}
+
+html body {
+    background-color: #eceff1;
+}
+.tabs .indicator {
+    background-color: #e53935;
+}
+
+.close_icon {
+    float:right;
+    width: 25px;
+    height: 25px;
+    background-image: url("../img/close.png");
+    background-size: cover;
+    transition: background-image 300ms ease-in-out;
+}
+
+.close_icon:hover {
+    background-image: url("../img/close_hover.png");
+    cursor: pointer;
+
+}
+
+
+h5 {
+    text-transform: uppercase;
+    font-weight: bold;
+    color: #2d2d2d;
+}
+.center_all {
+    /*display: inline-block;*/
+    /*width: 100px;*/
+    margin-right: auto;
+    margin-left: auto;
+    display: table;
+    /*vertical-align: middle;*/
+}
+
+/* label color */
+ .input-field label {
+   color: #2e2e2e;
+ }
+ /* label focus color */
+ .input-field input:focus + label {
+   color: #ff1f1f !important;
+ }
+ /* label underline focus color */
+ .input-field input:focus {
+   border-bottom: 1px solid #ff1f1f !important;
+   box-shadow: 0 1px 0 0 #ff1f1f !important;
+   font-weight: bold;
+ }
+ /* valid color */
+ .input-field input.valid {
+   border-bottom: 1px solid #ff1f1f
+   box-shadow: 0 1px 0 0 #ff1f1f
+ }
+ /* invalid color */
+ .input-field input.invalid {
+   border-bottom: 1px solid #ff1f1f
+   box-shadow: 0 1px 0 0 #ff1f1f
+ }
+ /* icon prefix focus color */
+ .input-field .prefix.active {
+   color: #ff1f1f
+ }

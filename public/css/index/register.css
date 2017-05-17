@@ -1,0 +1,21 @@
+.btn_social {
+    width: 50% !important;
+    display: block !important;
+    margin-top: 10px;
+    margin-left: auto;
+    margin-right: auto;
+    height: 40px;
+}
+
+.social_txt {
+    text-align: right!important;
+    font-weight: bolder;
+    font-size: 15px;
+    color: #fff;
+    /*float:right;*/
+}
+
+.txt_titleb {
+    display: block;
+    font-weight: bold;
+}
