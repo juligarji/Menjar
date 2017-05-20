@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <% include  ./partials/head.ejs %>
+</head>
+<body>
+
+<!-- HEADER -->
+<header>
+    <!-- Menu -->
+    <% include  ./partials/header.ejs %>
+
+</header>
+
+<!-- Principal -->
+<main>
+
+    <div class="row">
+
+        <!-- Usando una cuenta -->
+        <div class="col s8 offset-s2  info_rectangle rect_marg z-depth-2">
+            <h5>Escoge tu Rol</h5>
+
+            <div class="indicator orange">
+                <ul class="tabs">
+                    <li class="tab s1 m2"><a class="active red-text text-darken-2" href="#client">Cliente</a></li>
+                    <li class="tab s1 m2"><a class="active red-text text-darken-2" href="#provider">Proveedor</a></li>
+                    <li class="tab s1 m2"><a class="active red-text text-darken-2" href="#fundation">Fundacion</a></li>
+                </ul>
+            </div>
+
+            <!-- Formulario Cliente-->
+            <div id = "client">
+
+                <div class = "row">
+
+                    <div class = "col s6">
+                          <div class="input-field">
+                                <input name = "name" id="name" type="text" class="validate">
+                                <label for="name" data-error="Nombre no valido" data-success="right">Nombre</label>
+                          </div>
+                    </div>
+
+                    <div class = "col s6">
+                          <div class="input-field">
+                                <input name ="lastname" id="lastname" type="text" class="validate">
+                                <label for="lastname" data-error="Apellido no valido" data-success="right">Apellido</label>
+                          </div>
+                    </div>
+              </div>
+
+              <div class = "row">
+                    <div class = "col s8">
+                      <div class="input-field">
+                        <input name = "email" id="email" type="email" class="validate">
+                        <label for="email" data-error="Correo no válido." data-success="right">Email</label>
+                      </div>
+                    </div>
+
+
+                    <div class = "col s2">
+
+                            <input name ="born_date" id = "date" type="date" class="datepicker">
+                            <label for="date">fecha de Nacimiento</label>
+                    </div>
+
+              </div>
+
+              <div class = "row">
+                  <div class = "col s6">
+                        <div class="input-field">
+                              <input name ="password" id="password" type="password" class="validate">
+                              <label for="password" data-error="No coinciden" data-success="right">Contraseña</label>
+                        </div>
+                  </div>
+
+                  <div class = "col s6">
+                        <div class="input-field">
+                              <input id="password2" type="password" class="validate">
+                              <label for="password2" data-error="No coinciden" data-success="right">Repetir Contraseña</label>
+                        </div>
+                  </div>
+
+              </div>
+
+              <input name = "role" value = "client" style = "display:none">
+              <button onclick = "createUser('#client')" class="btn waves-effect waves-light teal darken-3" style="float:right;">
+                    Validar
+              </button>
+
+          </div>
+
+          <div id = "provider">
+
+              <div class = "row">
+
+                  <div class = "col s6">
+                        <div class="input-field">
+                              <input name = "name" id="name" type="text" class="validate">
+                              <label for="name" data-error="Nombre no valido" data-success="right">Nombre</label>
+                        </div>
+                  </div>
+
+                  <div class = "col s6">
+                        <div class="input-field">
+                              <input name ="lastname" id="lastname" type="text" class="validate">
+                              <label for="lastname" data-error="Apellido no valido" data-success="right">Apellido</label>
+                        </div>
+                  </div>
+            </div>
+
+            <div class = "row">
+                  <div class = "col s8">
+                    <div class="input-field">
+                      <input name = "email" id="email" type="email" class="validate">
+                      <label for="email" data-error="Correo no válido." data-success="right">Email</label>
+                    </div>
+                  </div>
+
+                  <div class = "col s4">
+                    <div class="input-field">
+                      <input name = "identification" id="identification" type="number" class="validate">
+                      <label for="identification" data-error="Id tiene que ser numero" data-success="right">Documento</label>
+                    </div>
+                  </div>
+
+
+            </div>
+
+            <div class = "row">
+                <div class = "col s6">
+                      <div class="input-field">
+                            <input name ="address" id="address" type="text" class="validate">
+                            <label for="address" data-error="No coinciden" data-success="right">Direccion</label>
+                      </div>
+                </div>
+
+                <div class = "col s4">
+                      <div class="input-field">
+                            <input name = "phone" id="phone" type="number" class="validate">
+                            <label for="phone" data-error="No coinciden" data-success="right">Telefono</label>
+                      </div>
+                </div>
+
+                <div class = "col s2">
+
+                        <input name ="born_date" id = "date" type="date" class="datepicker">
+                        <label for="date">fecha de Nacimiento</label>
+                </div>
+
+            </div>
+
+            <div class = "row">
+                <div class = "col s12">
+                      <div class="input-field">
+                            <input name ="description" id="description" type="text" class="validate">
+                            <label for="description" data-error="No coinciden" data-success="right">Descripcion</label>
+                      </div>
+                </div>
+            </div>
+
+            <div class = "row">
+                <div class = "col s6">
+                      <div class="input-field">
+                            <input name ="password" id="password" type="password" class="validate">
+                            <label for="password" data-error="No coinciden" data-success="right">Contraseña</label>
+                      </div>
+                </div>
+
+                <div class = "col s6">
+                      <div class="input-field">
+                            <input id="password2" type="password" class="validate">
+                            <label for="password2" data-error="No coinciden" data-success="right">Repetir Contraseña</label>
+                      </div>
+                </div>
+            </div>
+
+
+            <input name = "role" value = "provider" style = "display:none">
+            <button onclick = "createUser('#provider')" class="btn waves-effect waves-light teal darken-3" style="float:right;">
+                  Validar
+            </button>
+
+        </div>
+
+        <div id = "fundation">
+
+            <div class = "row">
+
+                <div class = "col s6">
+                      <div class="input-field">
+                            <input name = "name" id="name" type="text" class="validate">
+                            <label for="name" data-error="Nombre no valido" data-success="right">Nombre</label>
+                      </div>
+                </div>
+
+                <div class = "col s6">
+                      <div class="input-field">
+                            <input name = "identification" id="identification" type="text" class="validate">
+                            <label for="identification" data-error="NIT no valido" data-success="right">NIT</label>
+                      </div>
+                </div>
+
+          </div>
+
+          <div class = "row">
+                <div class = "col s8">
+                    <div class="input-field">
+                      <input name = "email" id="email" type="email" class="validate">
+                      <label for="email" data-error="Correo no válido." data-success="right">Email</label>
+                    </div>
+                </div>
+
+                <div class = "col s2">
+
+                        <input name ="born_date" id = "date" type="date" class="datepicker">
+                        <label for="born_date">fecha de Constitucion</label>
+                </div>
+          </div>
+
+          <div class = "row">
+              <div class = "col s8">
+                    <div class="input-field">
+                          <input name ="address" id="address" type="text" class="validate">
+                          <label for="address" data-error="No coinciden" data-success="right">Direccion</label>
+                    </div>
+              </div>
+
+              <div class = "col s4">
+                    <div class="input-field">
+                          <input id="phone" type="number" class="validate">
+                          <label for="phone" data-error="No coinciden" data-success="right">Telefono</label>
+                    </div>
+              </div>
+
+          </div>
+
+          <div class = "row">
+              <div class = "col s12">
+                    <div class="input-field">
+                          <input name ="description" id="description" type="text" class="validate">
+                          <label for="description" data-error="No coinciden" data-success="right">Descripcion</label>
+                    </div>
+              </div>
+          </div>
+
+          <div class = "row">
+              <div class = "col s6">
+                    <div class="input-field">
+                          <input name ="password" id="password" type="password" class="validate">
+                          <label for="password" data-error="No coinciden" data-success="right">Contraseña</label>
+                    </div>
+              </div>
+
+              <div class = "col s6">
+                    <div class="input-field">
+                          <input id="password2" type="password" class="validate">
+                          <label for="password2" data-error="No coinciden" data-success="right">Repetir Contraseña</label>
+                    </div>
+              </div>
+          </div>
+
+          <input name = "role" value = "fundation" style = "display:none">
+          <button onclick = "createUser('#fundation')" class="btn waves-effect waves-light teal darken-3" style="float:right;">
+                Validar
+          </button>
+
+      </div>
+        <!-- formulario de prueba -->
+
+            <!-- Password -->
+        </div>
+    </div>
+
+
+    <!-- modal de confirmacion -->
+    <div id="creatorModal" class="modal">
+        <div class="modal-content">
+          <h4 id = "returnMessage">Modal Header</h4>
+
+        </div>
+        <div class="modal-footer">
+            <a href="#!" class="modal-action modal-close waves-effect waves-green btn-flat">Aceptar</a>
+        </div>
+    </div>
+
+</main>
+
+<!-- FOOTER -->
+<footer>
+
+    <%include ./partials/footer.ejs %>
+</footer>
+
+<!-- jQuery -->
+<!-- JS - Materialize -->
+<!-- Buttons -->
+<% include  ./partials/foot.ejs %>
+<script src="/js/register/controller.js"></script>
+
+</body>
+</html>
