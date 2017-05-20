@@ -15,7 +15,7 @@ var path = require('path');
 
 // Rutas de accesso de modo de prueba
 // las que se llaman test-* permiten ver la base de datos
- 
+
 router.get('/test-users',function(req,res){
     res.set('Content-type','text/plain');
 
@@ -45,8 +45,6 @@ router.get('/view-provider',function(req,res){
     res.render('provider');
 
 });
-
-
 
 router.get('/test-fundations',function(req,res){
     res.set('Content-type','text/plain');

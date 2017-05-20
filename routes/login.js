@@ -10,6 +10,7 @@ var users = require('../database/Schemas/users');
 var redirect  = function(req,res){/* Redirecciona a la pagina necesaria dependiendo del rol de usuario*/
     var data = req.body || {};
 
+
       console.log('datos recibidos');
       console.log(JSON.stringify(data));
 
@@ -39,20 +40,22 @@ var redirect  = function(req,res){/* Redirecciona a la pagina necesaria dependie
             default:
 
             res.render('provider/index',{user:usr._id});
-
-
             res.end();
             console.log('Rol :' + usr.role);
+
             break;
                 return;
         }
     });
 }
 
+
 router.get('/',function(req,res){//pagina principal de login
         res.render('login');
+        red.end();
 });
 
+router.post('/sing_in',jsonParser,redirect);
 
 
 
