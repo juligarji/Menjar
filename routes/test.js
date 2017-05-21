@@ -8,6 +8,7 @@ var users = require('../database/Schemas/users');
 var clients =require('../database/Schemas/clients');
 var providers = require('../database/Schemas/providers');
 var fundations =require('../database/Schemas/fundations');
+var products =require('../database/Schemas/products');
 var path = require('path');
 
 
@@ -50,6 +51,14 @@ router.get('/test-fundations',function(req,res){
     res.set('Content-type','text/plain');
 
     fundations.find({},function(err,data){
+          res.send(JSON.stringify(data));
+    });
+});
+
+router.get('/test-products',function(req,res){
+    res.set('Content-type','text/plain');
+
+    products.find({},function(err,data){
           res.send(JSON.stringify(data));
     });
 });

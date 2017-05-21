@@ -5,7 +5,8 @@ var bodyParser = require("body-parser");
 var jsonParser = bodyParser.json();
 
 var users = require('../database/Schemas/users');
-
+var providers = require('../database/Schemas/providers');
+var providerController = require('../controllers/providerController');
 
 var redirect  = function(req,res){/* Redirecciona a la pagina necesaria dependiendo del rol de usuario*/
     var data = req.body || {};
@@ -39,8 +40,13 @@ var redirect  = function(req,res){/* Redirecciona a la pagina necesaria dependie
 
             default:
 
-            res.render('provider/index',{user:usr._id});
-            res.end();
+            providerController.getProvider(usr._id,function(prov){
+                res.render('provider/index',{user:usr._id,provider:prov});
+                console.log('PROVEEDOR');
+
+                console.log(JSON.stringify(prov,null,'\t'));
+            });
+
             console.log('Rol :' + usr.role);
 
             break;

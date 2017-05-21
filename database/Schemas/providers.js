@@ -12,6 +12,7 @@ var providersSchema = new Schema({
     gender:{type:String},
     description: {type:String,required:true},
 
+    products:[{type:Schema.ObjectId, ref:'products'}],
     created_at:{type:Date},
     updated_at:{type:Date}
 });

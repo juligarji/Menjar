@@ -33,42 +33,82 @@
 <main>
     <h4 class="center-align">Provider</h4>
     <div class="row">
-        <!-- Red social -->
-        <div class="col s12 offset-s2 offset-m2 m4 rect_marg z-depth-2">
-            <h5>Ingresa usando una red social</h5>
-            <!-- Facebook -->
-            <div class="btn blue darken-4 btn_social waves-effect waves-light">
-                <span class="social_txt">Facebook</span>
-            </div>
+        <!-- Red social
+        <div class="col s3 offset-s2 m2 rect_marg z-depth-2">
+            <h5>Datos Cliente</h5>
+            <div class = "divider"></div>
+        </div> -->
 
-            <!-- Twitter -->
-            <div class="btn light-blue btn_social waves-effect waves-light">
-                <span class="social_txt">Twitter</span>
-            </div>
+        <div class="col s9 offset-s2 offset-m1 m10 rect_marg z-depth-2">
+            <h5 class = "center-align"> Mis Productos </h5>
+            <table class = "responsive-table bordered">
 
-            <br>
+                <thead>
+                    <tr>
+                        <th>Imagen</th>
+                        <th>Nombre</th>
+                        <th>Categoria</th>
+                        <th>Vencimiento</th>
+                        <th>Precio</th>
+                        <th>Ubicacion</th>
+                        <th>Descripcion</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <% provider.products.forEach(function(product){ %>
+                    <tr>
+                      <td><%=product.img%></td>
+                      <td><%=product.name%></td>
+                      <td><%=product.category%></td>
+                      <td><%=product.expirationDate%></td>
+                      <td><%=product.price%></td>
+                      <td>[<%=product.location.lat%> ,<%=product.location.lng%>]</td>
+                      <td><%=product.description%></td>
+                    </tr>
+                    <% }); %>
+                    <tr>
+                      <td><div class = "input-field">
+                        <input name = "img" placeholder="img" id="img" type="text" class="validate">
+                      </div></td>
 
-            <div class="divider"></div>
+                      <td><div class = "input-field">
+                        <input name = "name" placeholder="Nombre" id="name" type="text" class="validate">
+                      </div></td>
 
-            <h5>Sin cuenta ?</h5>
+                      <td><div class = "input-field">
+                        <select name = "category" class = "browser-default">
+                            <option value = "Jugos">Jugos </option>
+                            <option value = "Paquetes">Paquete</option>
+                        </select>
 
-            <!-- Twitter -->
-            <a  href = "/register" style="color:white">
-                <div class="btn teal btn_social waves-effect ">
-                    <span class = "social_tx">Registrarse</span>
-                </div>
-            </a>
+                      </div></td>
 
+                      <td><div class = "input-field">
+                        <input name = "expirationDate" placeholder="Vencimiento" type="date" class="validate">
+                      </div></td>
 
+                      <td><div class = "input-field">
+                        <input name = "price" placeholder="Precio" id="price" type="number" class="validate">
+                      </div></td>
+
+                      <td><div class = "input-field">
+                        <a onclick = "locate()" id ="location" class = "btn btn-medium waves-effect waves-light">Ubicar</a>
+                      </div></td>
+
+                      <td><div class = "input-field">
+                         <textarea name = "description" class="materialize-textarea"></textarea>
+                      </div></td>
+
+                    </tr>
+
+                </tbody>
+            </table>
+                      <div class = "row">
+                          <div class = "input-field col m4">
+                              <a onclick = "createProduct('<%=user %>')" class = "btn-floating btn-large waves-effect waves-light green">+</a>
+                          </div>
+                      </div>
         </div>
-        <!-- Usando una cuenta -->
-
-          <!--<form action = "/login/redirect" method = "post">
-              <input name = "email">
-              <input name = "password">
-              <input type = "submit" value = "presione">
-            </form>-->
-
 
     </div>
     <!-- modal para verificar acceso -->
@@ -92,10 +132,11 @@
 <!-- JS - Materialize -->
  <script src="../vendor/materialize/js/materialize.js"></script>
 <!-- Buttons -->
-<script src="js/buttons.js"></script>
+<script src="../js/buttons.js"></script>
 <!-- Modals -->
-<script src="js/modals.js"></script>
-<script src="js/login/controller.js"></script>
+<script src="../js/modals.js"></script>
+
+<script src="../js/provider/controller.js"></script>
 
 </body>
 </html>

@@ -2,18 +2,24 @@ var mongoose = require('mongoose');
 var Schema = mongoose.Schema;
 
 var productsSchema = new Schema({
-    name : {type:String,required:true},
-    inDate : {type:Date,required:true},
-    expirationDate : {type:Date,required:true},
-    discount: {type:Number,default:0},
-    location: [{
-          lat:{type:Number,required:true},
-          lon:{type:Number,required:true},
+    img : {type:String,required:true},
+   name : {type:String,required:true},
+    category : {type:String,required:true},
+    expirationDate : {type:Date},
+    price:{type:Number,required:true},
+    location: {
+          lat:{type:Number,required:false},
+          lon:{type:Number,required:false},
           ip:{type:String, required:false}
-    }],
-    category : {type: Schema.Types.ObjectId,required:true},
-    price:{type:String,required:true},
-    description:{type : String,default:''}
+    },
+    description:{type : String,default:''},
+
+    inDate : {type:Date},
+    discount: {type:Number,default:0}
+
+    //category : {type: Schema.Types.ObjectId,required:true},
+
+
 });
 
 var products = mongoose.model('products',productsSchema);

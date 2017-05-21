@@ -18,6 +18,7 @@ var index = require('./routes/index');
 var login = require('./routes/login');
 var client = require('./routes/client');
 var register = require('./routes/register');
+var provider = require('./routes/provider');
 
 var test = require('./routes/test');
 
@@ -47,6 +48,7 @@ app.use('/', index);
 app.use('/client', client);
 app.use('/login', login);
 app.use('/register', register);
+app.use('/provider', provider);
 app.use('/test', test);
 
 app.use(express.static(__dirname + '/public'));
