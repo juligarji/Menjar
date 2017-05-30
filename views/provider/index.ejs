@@ -8,7 +8,7 @@
 
   <link rel="shortcut icon" type="image/x-icon" href="../resources/index/favicon.ico" />
   <!-- Import Google Icon -->
-  <link href="http://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
         <!--Import materialize.css-->
 
         <link type="text/css" rel="stylesheet" href="../vendor/materialize/css/materialize.css"  media="screen,projection"/>
@@ -19,19 +19,43 @@
   <link rel="stylesheet" href="../css/index/map.css">
   <link rel="stylesheet" href="../css/index/products.css">
   <link rel="stylesheet" href="../css/index/register.css">
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 </head>
 <body>
 
 <!-- HEADER -->
 <header>
-    <!-- Menu -->
-    <% include  ../partials/header.ejs %>
 
+  <!-- Menu -->
+  <nav class="red darken-4 z-depth-3">
+    <div class="nav-wrapper">
+      <a href="/" class="brand-logo center">
+          <img src="../resources/index/logo_base.png" alt="" width="140px" heigth="70px" align="center">
+      </a>
+      <ul id="nav-mobile" class="right hide-on-med-and-down">
+        <li><a href="/login/sing_out"><i class="medium material-icons">launch</i></a></li>
+        <li><a href="collapsible.html"><i class="medium material-icons">settings</i></a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- Zona de busqueda -->
+  <div class="row z-depth-3" style="background-color:#d9d5d1;">
+      <div class="input-field col s7 offset-s2">
+                <input id="last_name" type="text" class="validate">
+                <label for="last_name"> <span style="margin-left: 10px;"></span>Buscar</label>
+      </div>
+      <button class="btn red darken-4 waves-effect waves-light input-field" style="height: 3rem;">
+          Buscar
+      </button>
+  </div>
+
+    <!-- Menu -->
 </header>
 
 <!-- Principal -->
 <main>
-    <h4 class="center-align">Provider</h4>
+  <!--  <h4 class="center-align">Provider</h4> -->
     <div class="row">
         <!-- Red social
         <div class="col s3 offset-s2 m2 rect_marg z-depth-2">
@@ -39,7 +63,7 @@
             <div class = "divider"></div>
         </div> -->
 
-        <div class="col s9 offset-s2 offset-m1 m10 rect_marg z-depth-2">
+        <div class="col s9 offset-s0 offset-m1 m10 rect_marg z-depth-2">
             <h5 class = "center-align"> Mis Productos </h5>
             <table class = "responsive-table bordered">
 
@@ -52,24 +76,50 @@
                         <th>Precio</th>
                         <th>Ubicacion</th>
                         <th>Descripcion</th>
+                        <th>M</th>
                     </tr>
                 </thead>
                 <tbody>
                     <% provider.products.forEach(function(product){ %>
                     <tr>
-                      <td><%=product.img%></td>
+                      <td><img src = "../<%=product.img%>" width="25%"></td>
                       <td><%=product.name%></td>
                       <td><%=product.category%></td>
                       <td><%=product.expirationDate%></td>
                       <td><%=product.price%></td>
                       <td>[<%=product.location.lat%> ,<%=product.location.lng%>]</td>
                       <td><%=product.description%></td>
+                      <td>
+                      <form method="post" action="/provider/delete-product">
+                          <button value="<%=product.id%>" name = "prodId" class = "fa fa-trash-o" style= "font-size:25px"> </button>
+                      </form>
+                      </td>
                     </tr>
+
                     <% }); %>
+
+
                     <tr>
-                      <td><div class = "input-field">
-                        <input name = "img" placeholder="img" id="img" type="text" class="validate">
+
+                      <!-- REmplezar por esto
+                      <td><div class = "file-field input-field">
+                        <input name = "img" placeholder="img" id="img" type="file" class="validate">
                       </div></td>
+
+                      -->
+
+                      <td>
+                         <div class="file-field input-field">
+                           <div class="btn">
+                             <span>File</span>
+                             <input id = "img" name = "img" type="file">
+                           </div>
+                           <div class="file-path-wrapper">
+                             <input class="file-path validate" type="text">
+                           </div>
+                         </div>
+                       </td>
+
 
                       <td><div class = "input-field">
                         <input name = "name" placeholder="Nombre" id="name" type="text" class="validate">
@@ -101,13 +151,20 @@
 
                     </tr>
 
+
                 </tbody>
+
+
             </table>
-                      <div class = "row">
-                          <div class = "input-field col m4">
-                              <a onclick = "createProduct('<%=user %>')" class = "btn-floating btn-large waves-effect waves-light green">+</a>
-                          </div>
-                      </div>
+
+            <div class = "row">
+                <div class = "input-field col m4">
+                    <a onclick = "createProduct()" class = "btn-floating btn-large waves-effect waves-light green">+</a>
+                    <!-- <input type = "submit" class = "btn-floating btn-large waves-effect waves-light green" value = "+"> -->
+                    <!-- <button class = "btn-floating btn-large waves-effect waves-light green"> + </button>  -->
+                </div>
+            </div>
+
         </div>
 
     </div>
@@ -136,7 +193,9 @@
 <!-- Modals -->
 <script src="../js/modals.js"></script>
 
-<script src="../js/provider/controller.js"></script>
+<script src="../js/login/provider/controller.js"></script>
+
+<script src="http://cdnjs.cloudflare.com/ajax/libs/jquery.form/3.51/jquery.form.min.js"></script>
 
 </body>
 </html>

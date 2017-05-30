@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
@@ -19,6 +20,8 @@
   <link rel="stylesheet" href="../css/index/map.css">
   <link rel="stylesheet" href="../css/index/products.css">
   <link rel="stylesheet" href="../css/index/register.css">
+
+
 
 </head>
 <body>
@@ -59,11 +62,11 @@
             <div class="info_rectangle z-depth-2" id="start_info_box">
                 <span class="close_icon" id="start_info">  </span>
                 <div class="content">
-                    <h5>CLIENTE</h5>
+                    <h5>BIENVENIDO <%= client.name %> </h5>
                     <ul class="features">
-                        <li> Característica 1 <i class="tiny material-icons">done</i></li>
+                      <!--  <li> Característica 1 <i class="tiny material-icons">done</i></li>
                         <li> Característica 2 <i class="tiny material-icons">done</i></li>
-                        <li> Característica 3 <i class="tiny material-icons">done</i></li>
+                        <li> Característica 3 <i class="tiny material-icons">done</i></li> -->
                     </ul>
                 </div>
             </div>
@@ -75,40 +78,40 @@
 
                 <div class="indicator orange">
                     <ul class="tabs">
-                        <li class="tab s1"><a class="active red-text text-darken-2" href="#content_1">Contenido 1</a></li>
-                        <li class="tab s1"><a class="active red-text text-darken-2" href="#content_2">Contenido 2</a></li>
+                        <li class="tab s1"><a class="active red-text text-darken-2" href="#content_1">No botar!</a></li>
+                        <li class="tab s1"><a class="active red-text text-darken-2" href="#content_2">A medida</a></li>
                     </ul>
                 </div>
 
 
             <div id="content_1">
                 <p>
-                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Esse aperiam, perspiciatis officiis! Officia saepe sequi expedita, obcaecati error, voluptas omnis nisi eveniet eaque aut laboriosam id molestiae fugit, officiis! Dolore.
+                    Menjar te da la oportunidad de comercializar aquellos productos que de otra manera se perderian en la basura.
                 </p>
             </div>
             <div id="content_2">
                 <p>
-                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Praesentium ab dolorem eaque velit perferendis enim doloribus, earum, esse, error, voluptate similique quam deleniti quasi reiciendis voluptatem distinctio nemo quas mollitia?
+                    Variedad de productos disponibles con descuentos inmejorables.
                 </p>
             </div>
         </div>
 
         <div class="col s7" style="margin-top: 20px;">
-
-            <div class="product z-depth-2">
+            <% products.forEach(function(product){ %>
+            <div class=" product z-depth-2">
                 <!-- Imagen -->
                 <div class="pimage">
-                    <img src="resources/index/products/bonyurtPack.png" alt="">
+                    <img src="../<%= product.img %>" alt="">
                 </div>
                 <!-- Datos del producto -->
                 <div class="pdata">
-                    <h5 class="red-text text-darken-3">Bonyurt</h5>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Totam consequatur ea ratione ut provident quibusdam magni molestiae facere sint.</p>
+                    <h5 class="red-text text-darken-3"><%= product.name %></h5>
+                    <p><%= product.description %></p>
                 </div>
                 <!-- Comprar -->
                 <div class="pbuy">
                     <div class="pbuy_middle">
-                        <h5 class="center-align">$2.500</h5>
+                        <h5 class="center-align"><%= product.price %></h5>
                         <div class="btn waves-effect waves-light blue-grey" style="margin-right:auto; margin-left:auto">
                             Comprar
                         </div>
@@ -116,53 +119,10 @@
 
                 </div>
             </div>
-
-            <div class="product z-depth-2">
-                <!-- Imagen -->
-                <div class="pimage">
-                    <img src="resources/index/products/bonyurtPack.png" alt="">
-                </div>
-                <!-- Datos del producto -->
-                <div class="pdata">
-                    <h5 class="red-text text-darken-3">Bonyurt</h5>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Totam consequatur ea ratione ut provident quibusdam magni molestiae facere sint.</p>
-                </div>
-                <!-- Comprar -->
-                <div class="pbuy">
-                    <div class="pbuy_middle">
-                        <h5 class="center-align">$2.500</h5>
-                        <div class="btn waves-effect waves-light blue-grey" style="margin-right:auto; margin-left:auto">
-                            Comprar
-                        </div>
-                    </div>
-
-                </div>
-            </div>
-
-            <div class="product z-depth-2">
-                <!-- Imagen -->
-                <div class="pimage">
-                    <img src="resources/index/products/bonyurtPack.png" alt="">
-                </div>
-                <!-- Datos del producto -->
-                <div class="pdata">
-                    <h5 class="red-text text-darken-3">Bonyurt</h5>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Totam consequatur ea ratione ut provident quibusdam magni molestiae facere sint.</p>
-                </div>
-                <!-- Comprar -->
-                <div class="pbuy">
-                    <div class="pbuy_middle">
-                        <h5 class="center-align">$2.500</h5>
-                        <div class="btn waves-effect waves-light blue-grey" style="margin-right:auto; margin-left:auto">
-                            Comprar
-                        </div>
-                    </div>
-
-                </div>
-            </div>
-
+            <% }); %>
         </div>
     </div>
+
 
 </main>
 
@@ -175,11 +135,8 @@
 <script src="../vendor/jquery/jquery-3.2.1.min.js"></script>
 <!-- JS - Materialize -->
  <script src="../vendor/materialize/js/materialize.js"></script>
-<!-- Buttons -->
-<script src="../js/buttons.js"></script>
-<!-- Modals -->
-<script src="../js/modals.js"></script>
-<script src="../js/login/controller.js"></script>
+
+
 
 
 <!-- Buttons -->
@@ -188,7 +145,9 @@
 <script src="../js/index/modals.js"></script>
 <!-- Google Maps Api -->
 <script src="../js/index/google_maps.js"></script>
-
+<script async defer
+src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB_lU3W4LsOD0j1VaKsW4wpV4RBae4vdEY&callback=initMap">
+</script>
 
 </body>
 </html>

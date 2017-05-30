@@ -64,6 +64,16 @@ router.get('/test-products',function(req,res){
 });
 
 
+router.get('/delete-products',function(req,res){
+    res.set('Content-type','text/plain');
+
+    products.remove({},function(err){
+        if (err) throw err;
+            res.send('Se elimino todo');
+    })
+});
+
+
 router.get('/remove',function(req,res){
     users.remove();
     clients.remove();
